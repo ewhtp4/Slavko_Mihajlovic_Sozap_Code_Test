@@ -191,6 +191,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3606951334964122768, guid: 72517654c08784c47be2a715674f9455, type: 3}
     - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 3606951334964122768, guid: 72517654c08784c47be2a715674f9455, type: 3}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
       propertyPath: colorMappings.Array.data[0].color.a
       value: 1
       objectReference: {fileID: 0}
@@ -242,9 +246,29 @@ PrefabInstance:
       propertyPath: colorMappings.Array.data[4].color.g
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1862472818082599387, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
       propertyPath: m_Name
       value: LevelGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599387, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}

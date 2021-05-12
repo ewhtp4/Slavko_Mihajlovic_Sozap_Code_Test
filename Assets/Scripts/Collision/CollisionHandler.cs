@@ -24,17 +24,17 @@ public class CollisionHandler : MonoBehaviour
 
             if (temp.y < other.transform.position.y)
             {
-                temp.y = temp.y - (height);
+                temp.y = temp.y - (height / 2);
                 transform.position = Vector3.Lerp(transform.position, temp, t);
             }
             if (temp.y > other.transform.position.y)
             {
-                temp.y = temp.y + (height);
+                temp.y = temp.y + (height / 2);
                 transform.position = Vector3.Lerp(transform.position, temp, t);
             }
             if (temp.x < other.transform.position.x)
             {
-                temp.x = temp.x - (width);
+                temp.x = temp.x - (width / 2);
                 transform.position = Vector3.Lerp(transform.position, temp, t);
             }
             if (temp.x > other.transform.position.x)
@@ -55,22 +55,22 @@ public class CollisionHandler : MonoBehaviour
 
             if (temp.y < other.transform.position.y)
             {
-                otherTemp.y = otherTemp.y + (height);
+                otherTemp.y = otherTemp.y + (height /2 );
                 other.transform.position = Vector3.Lerp(other.transform.position, otherTemp, 0.1f);
             }
             if (temp.y > other.transform.position.y)
             {
-                otherTemp.y = otherTemp.y - (height);
+                otherTemp.y = otherTemp.y - (height / 2);
                 other.transform.position = Vector3.Lerp(other.transform.position, otherTemp, 0.1f);
             }
             if (temp.x < other.transform.position.x)
             {
-                otherTemp.x = otherTemp.x + (width);
+                otherTemp.x = otherTemp.x + (width / 2);
                 other.transform.position = Vector3.Lerp(other.transform.position, otherTemp, 0.1f);
             }
             if (temp.x > other.transform.position.x)
             {
-                otherTemp.x = otherTemp.x - (width);
+                otherTemp.x = otherTemp.x - (width / 2);
                 other.transform.position = Vector3.Lerp(other.transform.position, otherTemp, 0.1f);
             }
         }

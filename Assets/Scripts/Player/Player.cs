@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         foreach (GameObject Box in Boxes)
         {
