@@ -4,7 +4,7 @@ public class CameraFollowPlayer : MonoBehaviour
 {
     private Transform player;
     private Vector3 offset;
-
+    float smoothFactor = 1f;
     void Start()
     {
         offset.z = -10;
@@ -13,6 +13,13 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = player.position + offset;
+        Follow();
+    }
+
+    void Follow()
+    {
+        Vector3 targetPosition = player.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor * Time.fixedDeltaTime);
+        transform.position = targetPosition;
     }
 }

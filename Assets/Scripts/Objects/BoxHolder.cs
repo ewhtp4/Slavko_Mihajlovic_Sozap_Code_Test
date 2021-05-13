@@ -7,7 +7,7 @@ public class BoxHolder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.tag = "BoxHolder";
     }
 
     // Update is called once per frame
