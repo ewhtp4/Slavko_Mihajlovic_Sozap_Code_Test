@@ -6,6 +6,7 @@ public class BoxHolder : MonoBehaviour
 {
     private List<GameObject> Boxes = new List<GameObject>();
     ParticleSystem particleSystem;
+    public bool Occupied = false;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class BoxHolder : MonoBehaviour
             if (Collision(Box))
             {
                 GetComponent<ParticleSystem>().Play();
+                Occupied = true;
             }
         }
     }
@@ -37,5 +39,10 @@ public class BoxHolder : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public bool GetOccupied()
+    {
+        return Occupied;
     }
 }
