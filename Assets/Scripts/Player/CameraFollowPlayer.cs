@@ -2,24 +2,18 @@ using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
-    private Transform player;
     private Vector3 offset;
-    float smoothFactor = 1f;
+    public float zoomSize;
+    
     void Start()
     {
         offset.z = -10;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-    }
-
-    private void FixedUpdate()
-    {
-        Follow();
-    }
-
-    void Follow()
-    {
-        Vector3 targetPosition = player.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor * Time.fixedDeltaTime);
+        Vector3 targetPosition = transform.position + offset;
         transform.position = targetPosition;
+        GetComponent<Camera>().orthographicSize = 10f;
+    }
+    void Update()
+    {
+        GetComponent<Camera>().orthographicSize = 10f;
     }
 }

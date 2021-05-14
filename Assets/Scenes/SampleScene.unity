@@ -175,9 +175,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 2800000, guid: c9a694db326d83b43ad162eb38dc03f1, type: 3}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 8590079236466060149, guid: ba60d3a8dbf543548840130709554b82, type: 3}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
       propertyPath: colorMappings.Array.data[1].prefab
       value: 
-      objectReference: {fileID: 1493543695255307616, guid: f8e995ecfeffa1f42adf39a27650c80f, type: 3}
+      objectReference: {fileID: 37975128499231442, guid: f8e995ecfeffa1f42adf39a27650c80f, type: 3}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 6775041462711292209, guid: 7fd723e691d3c8d44a44682be073ea53, type: 3}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 8917064510684940391, guid: 13653c3d5b000724ea930359ce0ca689, type: 3}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[2].color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862472818082599365, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
+      propertyPath: colorMappings.Array.data[5].color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1862472818082599387, guid: a14dea1b96494ce4cbd49a752544e71b, type: 3}
       propertyPath: m_Name
       value: LevelGenerator
