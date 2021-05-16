@@ -5,12 +5,7 @@ public class LevelGenerator : MonoBehaviour
     public Texture2D map;
     public ColorToPrefab[] colorMappings;
 
-    void Start()
-    {
-        GenerateLevel();
-    }
-
-    void GenerateLevel()
+    public void GenerateLevel()
     {
         for(int x = 0; x < map.width; x++)
         {

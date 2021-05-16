@@ -15,9 +15,17 @@ public class Box : MonoBehaviour
         OnHolder = false;
     }
 
+    public bool GetOnHolder()
+    {
+        return OnHolder;
+    }
+
     public bool Move(Vector2 direction)
     {
-        FoundBoxHolder(transform.position, direction);
+        if(FoundBoxHolder(transform.position, direction)) 
+        { 
+            return false; 
+        }
 
         if (collisions.BlockedBox(transform.position, direction))
         {
@@ -36,9 +44,12 @@ public class Box : MonoBehaviour
         {
             Vector2 targetPosition = new Vector2(position.x, position.y) + direction;
             transform.position = targetPosition;
-            sprite.color = new Color(.5f, 1f, .5f, .5f);
+            sprite.color = new Color(.5f, 0.7f, .3f, 1f);
             OnHolder = true;
+            return true;
         }
+        sprite.color = new Color(1f, 1f, 1f, 1f);
+        OnHolder = false;
         return false;
     }
 }
