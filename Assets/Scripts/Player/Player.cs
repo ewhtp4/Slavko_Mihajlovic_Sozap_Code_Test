@@ -1,5 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+/*******************************************************
+ *                Controls Player movement
+ ******************************************************/                
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -18,6 +19,11 @@ public class Player : MonoBehaviour
         CheckMovement(moveInput);
     }
 
+    /****************************************************
+     *       Checking if Player is ready to move
+     *      if the buton pressed and released then
+     *        the the player can move again
+     ***************************************************/        
     public void CheckMovement(Vector2 moveInput)
     {
         moveInput.Normalize();
@@ -26,7 +32,7 @@ public class Player : MonoBehaviour
             if (m_ReadyForInput)
             {
                 m_ReadyForInput = false;
-                ShouldMove(moveInput);
+                ShouldMove(moveInput); //Checks if the player should move
             }
         }
         else
@@ -35,11 +41,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*****************************************************************
+     *           Checking if the player is trying to move 
+     *           in the direction of a Wall or a Box
+     ****************************************************************/
+
     public void ShouldMove(Vector2 direction)
     {
-        DirectionNormalize(direction);
+        DirectionNormalize(direction); //Insures there can be no diagonal movement 
 
-        if (collisions.BlockedPlayer(transform.position, direction))
+        /*********************************************************
+         *    Checking for walls or boxes is done in the Collisions
+         *********************************************************/    
+        if (collisions.BlockedPlayer(transform.position, direction)) 
         {
             return;
         }
@@ -52,7 +66,7 @@ public class Player : MonoBehaviour
         {
             direction.x = 0;
         }
-        else if(Mathf.Abs(direction.x) < 0.5)
+        else 
         {
             direction.y = 0;
         }

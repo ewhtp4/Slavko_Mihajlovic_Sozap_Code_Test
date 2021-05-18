@@ -26,10 +26,8 @@ public class Joystick : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
-            //Getting the position of where we clicked in world view
             pointA = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 
                 Input.mousePosition.y, Camera.main.transform.position.z));
-            //Also need to reverse value here
             innerCircle.transform.position = pointA;
             innerCircle.GetComponent<SpriteRenderer>().enabled = true;
             outerCircle.transform.position = pointA;
@@ -49,10 +47,9 @@ public class Joystick : MonoBehaviour
         }
     }
 
-    //Movement and Physics are calcilated in FixedUpdate
     private void FixedUpdate()
     {
-        // if we touched or clicked the off set is calculated
+        // if we touched or clicked the offset is calculated
         if(touchStart)
         {
             Vector2 offset = pointB - pointA;
@@ -80,6 +77,7 @@ public class Joystick : MonoBehaviour
             if (m_ReadyForInput)
             {
                 m_ReadyForInput = false;
+                // Move sequence is called from within the player
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().CheckMovement(direction);
             }
         }
