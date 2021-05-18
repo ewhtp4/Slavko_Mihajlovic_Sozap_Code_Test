@@ -5,23 +5,28 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Collisions collisions;
-    private bool m_ReadyForInput;
+    public bool m_ReadyForInput;
     
     void Start()
     {
         collisions = GetComponent<Collisions>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        CheckMovement(moveInput);
+    }
+
+    public void CheckMovement(Vector2 moveInput)
+    {
         moveInput.Normalize();
         if (moveInput.sqrMagnitude > 0.5) //Button is pressed or held
         {
             if (m_ReadyForInput)
             {
                 m_ReadyForInput = false;
-                Move(moveInput);
+                ShouldMove(moveInput);
             }
         }
         else
@@ -30,28 +35,24 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool Move(Vector2 direction)
+    public void ShouldMove(Vector2 direction)
     {
         DirectionNormalize(direction);
 
         if (collisions.BlockedPlayer(transform.position, direction))
         {
-            return false;
+            return;
         }
-        else
-        {
-            transform.Translate(direction);
-            return true;
-        }
+        transform.Translate(direction);
     }
 
-    void DirectionNormalize(Vector2 direction)
+    public void DirectionNormalize(Vector2 direction)
     {
         if (Mathf.Abs(direction.x) < 0.5)
         {
             direction.x = 0;
         }
-        else
+        else if(Mathf.Abs(direction.x) < 0.5)
         {
             direction.y = 0;
         }

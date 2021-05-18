@@ -12,6 +12,7 @@ public class JsonController : MonoBehaviour
     {
         public int level;
         public string time;
+        public string checkTime;
         public bool solved;
         public int numberOfPlays;
     }
@@ -30,6 +31,13 @@ public class JsonController : MonoBehaviour
         string levelsTimer = "Timer" + level;
         string jsonTimer = PlayerPrefs.GetString(levelsTimer);
         return jsonTimer;
+    }
+
+    public string GetCheckTime(int level)
+    {
+        string levelsCheckTime = "CheckTime" + level;
+        string jsonCheckTime = PlayerPrefs.GetString(levelsCheckTime);
+        return jsonCheckTime;
     }
 
     public bool GetSolved(int level)
@@ -60,6 +68,13 @@ public class JsonController : MonoBehaviour
         presentLevel.time = time;
         string levelsTimer = "Timer" + level;
         PlayerPrefs.SetString(levelsTimer, presentLevel.time);
+    }
+
+    public void SetCheckTime(int level, string checkTime)
+    {
+        presentLevel.checkTime = checkTime;
+        string levelsCheckTime = "CheckTime" + level;
+        PlayerPrefs.SetString(levelsCheckTime, presentLevel.checkTime);
     }
 
     public void SetSolved(int level, bool solved)

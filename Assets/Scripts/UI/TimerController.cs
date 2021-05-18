@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour
 {
     public static TimerController instance;
-    public Text timeCounter;
+    public TMPro.TMP_Text timeCounter;
 
     private TimeSpan timePlaying;
     private bool timerOn;
