@@ -1,7 +1,7 @@
 {
     "level": 1,
-    "time": "00:05:33",
+    "time": "00:05:69",
     "checkTime": "",
     "solved": true,
-    "numberOfPlays": 29
+    "numberOfPlays": 30
 }

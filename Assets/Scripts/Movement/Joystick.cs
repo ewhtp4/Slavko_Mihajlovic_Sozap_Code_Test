@@ -56,11 +56,9 @@ public class Joystick : MonoBehaviour
             //Insuring the ofset is in a radius of 1
             offset.Normalize();
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().DirectionNormalize(direction);
-            PlayerMove(direction);
-
             innerCircle.transform.position = new Vector2(pointA.x + direction.x,
                 pointA.y + direction.y);
+            PlayerMove(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().DirectionNormalize(direction));
             touchStart = false;
         }
         else

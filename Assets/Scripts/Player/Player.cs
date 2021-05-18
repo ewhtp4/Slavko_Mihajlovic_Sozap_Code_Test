@@ -48,19 +48,18 @@ public class Player : MonoBehaviour
 
     public void ShouldMove(Vector2 direction)
     {
-        DirectionNormalize(direction); //Insures there can be no diagonal movement 
 
         /*********************************************************
          *    Checking for walls or boxes is done in the Collisions
          *********************************************************/    
-        if (collisions.BlockedPlayer(transform.position, direction)) 
+        if (collisions.BlockedPlayer(transform.position, DirectionNormalize(direction))) 
         {
             return;
         }
         transform.Translate(direction);
     }
 
-    public void DirectionNormalize(Vector2 direction)
+    public Vector2 DirectionNormalize(Vector2 direction)
     {
         if (Mathf.Abs(direction.x) < 0.5)
         {
@@ -71,6 +70,8 @@ public class Player : MonoBehaviour
             direction.y = 0;
         }
         direction.Normalize();
+
+        return direction;
     }
 }
 
